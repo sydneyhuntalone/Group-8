@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>FinTech App - Landing Page</title>
+  <style>
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    body {
+      font-family: 'Segoe UI', sans-serif;
+      background-color: #f7f9fc;
+      color: #333;
+      line-height: 1.6;
+    }
+    header {
+      background-color: #0047AB;
+      padding: 20px;
+      text-align: center;
+      color: white;
+    }
+    nav {
+      background-color: #003580;
+      padding: 10px 0;
+      text-align: center;
+    }
+    nav a {
+      color: white;
+      margin: 0 15px;
+      text-decoration: none;
+      font-weight: bold;
+    }
+    .hero {
+      padding: 60px 20px;
+      text-align: center;
+      background: #e6efff;
+    }
+    .hero h2 {
+      font-size: 2rem;
+      margin-bottom: 20px;
+    }
+    .hero p {
+      font-size: 1.1rem;
+      max-width: 600px;
+      margin: auto;
+    }
+    .features {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+      gap: 20px;
+      padding: 40px 20px;
+    }
+    .feature {
+      background: white;
+      border-radius: 10px;
+      padding: 20px;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+      transition: transform 0.3s;
+      text-align: center;
+    }
+    .feature:hover {
+      transform: translateY(-5px);
+    }
+    .feature h3 {
+      margin-bottom: 10px;
+      color: #0047AB;
+    }
+    .feature button {
+      margin-top: 10px;
+      padding: 10px 15px;
+      background-color: #0047AB;
+      color: white;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+    }
+    .feature button:hover {
+      background-color: #002f6c;
+    }
+    footer {
+      background-color: #003580;
+      color: white;
+      text-align: center;
+      padding: 20px;
+      margin-top: 40px;
+    }
+  </style>
+</head>
+<body>
+
+  <header>
+    <h1>FinTech Wallet</h1>
+    <p>Smart. Secure. Seamless.</p>
+  </header>
+
+  <nav>
+    <a href="#features">Features</a>
+    <a href="#register">Register</a>
+    <a href="#support">Support</a>
+  </nav>
+
+  <section class="hero">
+    <h2>Your Digital Wallet, Simplified</h2>
+    <p>Manage your money with ease – transfer funds, track spending, get real-time alerts, and access support in seconds.</p>
+    <button onclick="handleAction('signup')">Get Started</button>
+  </section>
+
+  <section id="features" class="features">
+    <div class="feature">
+      <h3>Secure Login</h3>
+      <p>Biometric & two-factor authentication keep your account safe at all times.</p>
+      <button onclick="handleAction('login')">Login</button>
+    </div>
+    <div class="feature">
+      <h3>View Balance</h3>
+      <p>Check your account and wallet balances with real-time updates.</p>
+      <button onclick="handleAction('balance')">View Balance</button>
+    </div>
+    <div class="feature">
+      <h3>Money Transfer</h3>
+      <p>Send funds to banks, wallets, or other users with just a few taps.</p>
+      <button onclick="handleAction('transfer')">Transfer Money</button>
+    </div>
+    <div class="feature">
+      <h3>Transaction History</h3>
+      <p>Track all your activities with full transaction logs and receipts.</p>
+      <button onclick="handleAction('history')">Transaction History</button>
+    </div>
+    <div class="feature">
+      <h3>In-App Support</h3>
+      <p>Live chat, FAQs, and ticket system to resolve your concerns fast.</p>
+      <button onclick="handleAction('support')">Open Support</button>
+    </div>
+  </section>
+
+  <footer id="support">
+    <p>&copy; 2025 FinTech Wallet App | Built for Sierra Leone</p>
+    <p>Support: support@fintechwallet.sl</p>
+  </footer>
+
+  <script>
+    function handleAction(action) {
+      switch(action) {
+        case 'login':
+          alert("Redirecting to Secure Login...");
+          break;
+        case 'balance':
+          alert("Fetching your balance...");
+          break;
+        case 'transfer':
+          alert("Opening money transfer interface...");
+          break;
+        case 'history':
+          alert("Displaying your transaction history...");
+          break;
+        case 'support':
+          alert("Connecting you to in-app support...");
+          break;
+        case 'signup':
+          alert("Redirecting to registration...");
+          break;
+        default:
+          alert("Unknown action");
+      }
+    }
+  </script>
+
+</body>
+</html>
