@@ -1,0 +1,253 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>FinTech Wallet App</title>
+  <style>
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    body {
+      font-family: 'Segoe UI', sans-serif;
+      background-color: #f7f9fc;
+      color: #333;
+      line-height: 1.6;
+    }
+    header {
+      background-color: #0047AB;
+      padding: 20px;
+      text-align: center;
+      color: white;
+    }
+    nav {
+      background-color: #003580;
+      padding: 10px 0;
+      text-align: center;
+    }
+    nav a {
+      color: white;
+      margin: 0 15px;
+      text-decoration: none;
+      font-weight: bold;
+    }
+    .hero {
+      padding: 60px 20px;
+      text-align: center;
+      background: #e6efff;
+    }
+    .hero h2 {
+      font-size: 2rem;
+      margin-bottom: 20px;
+    }
+    .hero p {
+      font-size: 1.1rem;
+      max-width: 600px;
+      margin: auto;
+    }
+    .features {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+      gap: 20px;
+      padding: 40px 20px;
+    }
+    .feature {
+      background: white;
+      border-radius: 10px;
+      padding: 20px;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+      transition: transform 0.3s;
+      text-align: center;
+    }
+    .feature:hover {
+      transform: translateY(-5px);
+    }
+    .feature h3 {
+      margin-bottom: 10px;
+      color: #0047AB;
+    }
+    .feature button {
+      margin-top: 10px;
+      padding: 10px 15px;
+      background-color: #0047AB;
+      color: white;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+    }
+    .feature button:hover {
+      background-color: #002f6c;
+    }
+    footer {
+      background-color: #003580;
+      color: white;
+      text-align: center;
+      padding: 20px;
+      margin-top: 40px;
+    }
+    .bug-report {
+      max-width: 500px;
+      background: white;
+      margin: 40px auto;
+      padding: 20px;
+      border-radius: 10px;
+      box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+    }
+    .bug-report h2 {
+      text-align: center;
+      color: #0047AB;
+      margin-bottom: 20px;
+    }
+    .bug-report label {
+      display: block;
+      margin-top: 10px;
+      font-weight: bold;
+    }
+    .bug-report input, .bug-report textarea {
+      width: 100%;
+      padding: 10px;
+      margin-top: 5px;
+      border-radius: 5px;
+      border: 1px solid #ccc;
+    }
+    .bug-report button {
+      margin-top: 20px;
+      padding: 10px 20px;
+      background-color: #0047AB;
+      color: white;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+    }
+    .bug-report button:hover {
+      background-color: #002f6c;
+    }
+    .message {
+      margin-top: 15px;
+      text-align: center;
+      font-weight: bold;
+    }
+  </style>
+</head>
+<body>
+
+  <header>
+    <h1>FinTech Wallet</h1>
+    <p>Smart. Secure. Seamless.</p>
+  </header>
+
+  <nav>
+    <a href="#features">Features</a>
+    <a href="#report">Report Bug</a>
+    <a href="#support">Support</a>
+  </nav>
+
+  <section class="hero">
+    <h2>Your Digital Wallet, Simplified</h2>
+    <p>Manage your money with ease – transfer funds, track spending, get real-time alerts, and access support in seconds.</p>
+    <button onclick="handleAction('signup')">Get Started</button>
+  </section>
+
+  <section id="features" class="features">
+    <div class="feature">
+      <h3>Secure Login</h3>
+      <p>Biometric & two-factor authentication keep your account safe at all times.</p>
+      <button onclick="handleAction('login')">Login</button>
+    </div>
+    <div class="feature">
+      <h3>View Balance</h3>
+      <p>Check your account and wallet balances with real-time updates.</p>
+      <button onclick="handleAction('balance')">View Balance</button>
+    </div>
+    <div class="feature">
+      <h3>Money Transfer</h3>
+      <p>Send funds to banks, wallets, or other users with just a few taps.</p>
+      <button onclick="handleAction('transfer')">Transfer Money</button>
+    </div>
+    <div class="feature">
+      <h3>Transaction History</h3>
+      <p>Track all your activities with full transaction logs and receipts.</p>
+      <button onclick="handleAction('history')">Transaction History</button>
+    </div>
+    <div class="feature">
+      <h3>In-App Support</h3>
+      <p>Live chat, FAQs, and ticket system to resolve your concerns fast.</p>
+      <button onclick="handleAction('support')">Open Support</button>
+    </div>
+  </section>
+
+  <!-- Bug Report Section -->
+  <section id="report" class="bug-report">
+    <h2>Report a Bug</h2>
+    <label for="username">Your Name</label>
+    <input type="text" id="username" placeholder="Enter your name" />
+
+    <label for="email">Email Address</label>
+    <input type="email" id="email" placeholder="Enter your email" />
+
+    <label for="module">Affected Feature</label>
+    <input type="text" id="module" placeholder="e.g., Money Transfer" />
+
+    <label for="description">Bug Description</label>
+    <textarea id="description" rows="5" placeholder="Describe the issue in detail..."></textarea>
+
+    <button onclick="submitBugReport()">Submit Bug</button>
+    <div class="message" id="message"></div>
+  </section>
+
+  <footer id="support">
+    <p>&copy; 2025 FinTech Wallet App | Built for Sierra Leone</p>
+    <p>Support: support@fintechwallet.sl</p>
+  </footer>
+
+  <script>
+    function handleAction(action) {
+      switch(action) {
+        case 'login':
+          alert("Redirecting to Secure Login...");
+          break;
+        case 'balance':
+          alert("Fetching your balance...");
+          break;
+        case 'transfer':
+          alert("Opening money transfer interface...");
+          break;
+        case 'history':
+          alert("Displaying your transaction history...");
+          break;
+        case 'support':
+          alert("Connecting you to in-app support...");
+          break;
+        case 'signup':
+          alert("Redirecting to registration...");
+          break;
+        default:
+          alert("Unknown action");
+      }
+    }
+
+    function submitBugReport() {
+      const name = document.getElementById('username').value.trim();
+      const email = document.getElementById('email').value.trim();
+      const module = document.getElementById('module').value.trim();
+      const description = document.getElementById('description').value.trim();
+      const messageBox = document.getElementById('message');
+
+      if (!name || !email || !module || !description) {
+        messageBox.style.color = "red";
+        messageBox.innerText = "Please fill in all fields.";
+        return;
+      }
+
+      console.log("Bug Report Submitted:", { name, email, module, description });
+
+      // Clear form and show success message
+      document.getElementById('username').value = '';
+      document.getElementById('email').value = '';
+      document.getElementById('module').value = '';
+      document.getElementById('description').value = '';
+      messageBox.style.color = "green";
+      messageBox.innerText = "Bug report submitted successfully!";
+    }
+  </script>
+
+</body>
+</html>
